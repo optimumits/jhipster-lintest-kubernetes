@@ -7,6 +7,8 @@ You will need to push your image to a registry. If you have not done so, use the
 ```
 $ docker image tag jhipsterlintestapplication cilincner/jhipsterlintestapplication
 $ docker push cilincner/jhipsterlintestapplication
+$ docker image tag jhipsterlintestgateway cilincner/jhipsterlintestgateway
+$ docker push cilincner/jhipsterlintestgateway
 ```
 
 ## Deployment
@@ -31,6 +33,10 @@ skaffold run [or] skaffold deploy
 
 ## Exploring your services
 
+Use these commands to find your application's IP addresses:
+
+```
+$ kubectl get svc jhipsterlintestgateway -n jhipsterlintest2
 ```
 
 ## Scaling your deployments
@@ -38,9 +44,7 @@ skaffold run [or] skaffold deploy
 You can scale your apps using
 
 ```
-
-\$ kubectl scale deployment <app-name> --replicas <replica-count> -n jhipsterlintest2
-
+$ kubectl scale deployment <app-name> --replicas <replica-count> -n jhipsterlintest2
 ```
 
 ## zero-downtime deployments
@@ -48,9 +52,7 @@ You can scale your apps using
 The default way to update a running app in kubernetes, is to deploy a new image tag to your docker registry and then deploy it using
 
 ```
-
-\$ kubectl set image deployment/<app-name>-app <app-name>=<new-image> -n jhipsterlintest2
-
+$ kubectl set image deployment/<app-name>-app <app-name>=<new-image>  -n jhipsterlintest2
 ```
 
 Using livenessProbes and readinessProbe allow you to tell Kubernetes about the state of your applications, in order to ensure availablity of your services. You will need minimum 2 replicas for every application deployment if you want to have zero-downtime deployed.
@@ -61,42 +63,34 @@ This is because the rolling upgrade strategy first stops a running replica in or
 ### JHipster console
 
 Your application logs can be found in JHipster console (powered by Kibana). You can find its service details by
-```
-
-\$ kubectl get svc jhipster-console -n jhipsterlintest2
 
 ```
+$ kubectl get svc jhipster-console -n jhipsterlintest2
+```
 
-* If you have chosen *Ingress*, then you should be able to access Kibana using the given ingress domain.
-* If you have chosen *NodePort*, then point your browser to an IP of any of your nodes and use the node port described in the output.
-* If you have chosen *LoadBalancer*, then use the IaaS provided LB IP
+- If you have chosen _Ingress_, then you should be able to access Kibana using the given ingress domain.
+- If you have chosen _NodePort_, then point your browser to an IP of any of your nodes and use the node port described in the output.
+- If you have chosen _LoadBalancer_, then use the IaaS provided LB IP
 
 ## JHipster registry
 
 The registry is deployed using a headless service in kubernetes, so the primary service has no IP address, and cannot get a node port. You can create a secondary service for any type, using:
 
 ```
-
-\$ kubectl expose service jhipster-registry --type=NodePort --name=exposed-registry -n jhipsterlintest2
-
+$ kubectl expose service jhipster-registry --type=NodePort --name=exposed-registry -n jhipsterlintest2
 ```
 
 and explore the details using
 
 ```
-
-\$ kubectl get svc exposed-registry -n jhipsterlintest2
-
+$ kubectl get svc exposed-registry -n jhipsterlintest2
 ```
 
 For scaling the JHipster registry, use
 
 ```
-
-\$ kubectl scale statefulset jhipster-registry --replicas 3 -n jhipsterlintest2
-
+$ kubectl scale statefulset jhipster-registry --replicas 3 -n jhipsterlintest2
 ```
-
 
 ## Troubleshooting
 
@@ -111,4 +105,3 @@ This can occur if your cluster has low resource (e.g. Minikube). Increase the `i
 > my applications are starting very slow, despite I have a cluster with many resources
 
 The default setting are optimized for middle-scale clusters. You are free to increase the JAVA_OPTS environment variable, and resource requests and limits to improve the performance. Be careful!
-```

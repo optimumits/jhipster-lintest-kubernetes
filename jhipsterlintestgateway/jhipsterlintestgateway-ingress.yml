@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: jhipsterlintestgateway
+  namespace: jhipsterlintest2
+spec:
+  rules:
+    - host: jhipsterlintestgateway.jhipsterlintest2.192.168.99.100.nip.io
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: jhipsterlintestgateway
+              servicePort: 8093

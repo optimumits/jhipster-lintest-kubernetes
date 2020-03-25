@@ -1,7 +1,7 @@
 {
   "generator-jhipster": {
-    "appsFolders": ["jhipster-lintest-application"],
-    "directoryPath": "./",
+    "appsFolders": ["jhipster-lintest-application", "jhipster-lintest-gateway"],
+    "directoryPath": "../",
     "clusteredDbApps": [],
     "serviceDiscoveryType": "eureka",
     "jwtSecretKey": "MGE1Yjk2Y2RhZGUyNzZkZmQyNGY5NmRmZTM2Yzc4YTY5NzEzMDdkMTYyYzQ0NjQxYWM3NTQ4OTI5NjFiYjQwNTBhMWNhNzNhNWYxYjM1YzFhZmE5ZTZlMmRjZTVhMDExYzM1NQ==",

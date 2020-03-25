@@ -3,7 +3,10 @@ kind: Config
 build:
   artifacts:
     - image: cilincner/jhipsterlintestapplication
-      context: ./jhipster-lintest-application
+      context: ../jhipster-lintest-application
+      jib: {}
+    - image: cilincner/jhipsterlintestgateway
+      context: ../jhipster-lintest-gateway
       jib: {}
   tagPolicy:
     envTemplate:

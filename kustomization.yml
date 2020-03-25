@@ -9,6 +9,11 @@ resources:
   - jhipsterlintestapplication/jhipsterlintestapplication-deployment.yml
   - jhipsterlintestapplication/jhipsterlintestapplication-service.yml
   - jhipsterlintestapplication/jhipsterlintestapplication-mongodb.yml
+  - jhipsterlintestgateway/jhipsterlintestgateway-deployment.yml
+  - jhipsterlintestgateway/jhipsterlintestgateway-service.yml
+  - jhipsterlintestgateway/jhipsterlintestgateway-mongodb.yml
+  - jhipsterlintestgateway/jhipsterlintestgateway-elasticsearch.yml
+  - jhipsterlintestgateway/jhipsterlintestgateway-ingress.yml
   # messagebroker
   - messagebroker/kafka.yml
   # monitoring elk

@@ -36,10 +36,10 @@ spec:
           resources:
             requests:
               memory: '512Mi'
-              cpu: '300m'
+              cpu: '500m'
             limits:
               memory: '1Gi'
-              cpu: '0.4'
+              cpu: '1'
       restartPolicy: Always
 ---
 apiVersion: v1

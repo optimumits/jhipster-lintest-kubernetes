@@ -23,6 +23,7 @@ logSummary() {
     echo "#####################################################"
     echo "Please find the below useful endpoints,"
     echo "JHipster Console - http://jhipster-console.jhipsterlintest2.192.168.99.100.nip.io"
+    echo "Gateway - http://jhipsterlintestgateway.jhipsterlintest2.192.168.99.100.nip.io"
     echo "#####################################################"
 }
 
@@ -30,6 +31,7 @@ default() {
     kubectl apply -f namespace.yml
     kubectl apply -f registry/
     kubectl apply -f jhipsterlintestapplication/
+    kubectl apply -f jhipsterlintestgateway/
     kubectl apply -f messagebroker/
     kubectl apply -f console/
 

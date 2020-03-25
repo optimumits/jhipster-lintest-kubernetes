@@ -50,7 +50,7 @@ metadata:
   namespace: jhipsterlintest2
 spec:
   rules:
-    - host: localminikube
+    - host: jhipster-console.jhipsterlintest2.192.168.99.100.nip.io
       http:
         paths:
           - path: /
