@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jhipsterlintestapplication
+  namespace: jhipsterlintest2
+  labels:
+    app: jhipsterlintestapplication
+spec:
+  selector:
+    app: jhipsterlintestapplication
+  ports:
+    - name: http
+      port: 8081

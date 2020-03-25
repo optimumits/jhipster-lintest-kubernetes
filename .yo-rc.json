@@ -1,0 +1,18 @@
+{
+  "generator-jhipster": {
+    "appsFolders": ["jhipster-lintest-application"],
+    "directoryPath": "./",
+    "clusteredDbApps": [],
+    "serviceDiscoveryType": "eureka",
+    "jwtSecretKey": "MGE1Yjk2Y2RhZGUyNzZkZmQyNGY5NmRmZTM2Yzc4YTY5NzEzMDdkMTYyYzQ0NjQxYWM3NTQ4OTI5NjFiYjQwNTBhMWNhNzNhNWYxYjM1YzFhZmE5ZTZlMmRjZTVhMDExYzM1NQ==",
+    "dockerRepositoryName": "cilincner",
+    "dockerPushCommand": "docker push",
+    "kubernetesNamespace": "jhipsterlintest2",
+    "kubernetesServiceType": "Ingress",
+    "kubernetesUseDynamicStorage": false,
+    "ingressType": "nginx",
+    "ingressDomain": "192.168.99.100.nip.io",
+    "monitoring": "elk",
+    "istio": false
+  }
+}

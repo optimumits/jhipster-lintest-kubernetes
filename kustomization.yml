@@ -1,0 +1,24 @@
+commonLabels:
+  app.kubernetes.io/genereted-by: JHipster
+
+namespace: jhipsterlintest2
+
+resources:
+  - namespace.yml
+  # Individual apps
+  - jhipsterlintestapplication/jhipsterlintestapplication-deployment.yml
+  - jhipsterlintestapplication/jhipsterlintestapplication-service.yml
+  - jhipsterlintestapplication/jhipsterlintestapplication-mongodb.yml
+  # messagebroker
+  - messagebroker/kafka.yml
+  # monitoring elk
+  - console/jhipster-elasticsearch.yml
+  - console/jhipster-logstash.yml
+  - console/jhipster-console.yml
+  - console/jhipster-dashboard-console.yml
+  - console/jhipster-zipkin.yml
+  # service discovery eureka/consul
+  - registry/jhipster-registry.yml
+  - registry/application-configmap.yml
+
+patchesJson6902:
