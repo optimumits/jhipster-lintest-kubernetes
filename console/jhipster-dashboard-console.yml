@@ -40,5 +40,5 @@ spec:
               cpu: '200m'
             limits:
               memory: '1Gi'
-              cpu: '0.3'
+              cpu: '0.5'
       restartPolicy: OnFailure
